@@ -6,6 +6,9 @@ TagManager:
   tags:
   - Ground
   - Mirror
+  - Rope
+  - Enemy
+  - MirrorChasis
   layers:
   - Default
   - TransparentFX
@@ -13,15 +16,15 @@ TagManager:
   - 
   - Water
   - UI
+  - Lasegun
+  - Player
+  - Mirror
+  - Objects
+  - Rope
+  - 
   - ground
   - 
-  - 
-  - 
-  - 
-  - 
-  - 
-  - 
-  - 
+  - Effects
   - 
   - 
   - 
