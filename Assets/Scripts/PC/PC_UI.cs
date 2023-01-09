@@ -1,8 +1,4 @@
-using System.Collections;
-using System.Collections.Generic;
-using TreeEditor;
 using UnityEngine;
-using static UnityEngine.EventSystems.EventTrigger;
 
 public class PC_UI : MonoBehaviour
 {

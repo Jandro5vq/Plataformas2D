@@ -9,7 +9,7 @@ public class LaserShoot : MonoBehaviour
     public GameObject Particulas;
     public int Rebotes;
 
-    public bool Enabled;
+    public bool Enabled = false;
 
     public LayerMask Layer;
     public List<Vector2> Indices;
@@ -39,17 +39,24 @@ public class LaserShoot : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (enabled)
+
+
+        if (Enabled == true || Input.GetKey(KeyCode.I) && this.transform.parent.name == "Robot")
         {
             castRay();
             Actuator();
         }
         else
         {
+            Laser.positionCount = 0;
             Indices.Clear();
+            Indices.Add(new Vector2(transform.position.x + 0.2f, transform.position.y));
+            Indices.Add(new Vector2(transform.position.x + 0.6f, transform.position.y));
         }
 
         LaserUpdate();
+
+
     }
 
     void castRay()
