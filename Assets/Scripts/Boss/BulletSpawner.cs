@@ -8,7 +8,7 @@ public class BulletSpawner : MonoBehaviour
     [Range(1,360)]
     [SerializeField] private int N = 1;
     [Header("Velocidad de Rotacion")]
-    [Range(0, 100)]
+    [Range(-100, 100)]
     [SerializeField] private int R = 1;
     [Header("Retraso (Segundos)")]
     [SerializeField] private float D = 1;
@@ -43,7 +43,7 @@ public class BulletSpawner : MonoBehaviour
         
         for (int i = 0; i < N; i++)
         {
-            GameObject B = Instantiate(Bullets[BT], transform.position, Quaternion.Euler(0, 0,Dir * i), null);
+            GameObject B = Instantiate(Bullets[BT], transform.position, Quaternion.Euler(0, 0, transform.rotation.eulerAngles.z + R + Dir * i), null);
             B.GetComponent<BulletMovement>().Speed = V;
             B.GetComponent<BulletMovement>().Delay = L;
         }
